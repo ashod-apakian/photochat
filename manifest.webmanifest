@@ -1,0 +1,15 @@
+{
+  "name": "MeBeam",
+  "short_name": "MeBeam",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#113355",
+  "theme_color": "#113355",
+  "orientation": "landscape",
+  "description": "Group Video Calls in Browser",
+  "icons": [{
+    "src": "http://mebeam.com/favicon.png",
+    "sizes": "32x32",
+    "type": "image/png"
+  } ]
+}

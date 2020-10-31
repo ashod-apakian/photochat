@@ -1,0 +1,21 @@
+#ErrorDocument 404 /index.php
+<IfModule mod_rewrite.c>
+   RewriteEngine On
+   RewriteBase /
+   RewriteCond %{REQUEST_FILENAME} !-d
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteRule ^(.*)$ index.php?$1 [QSA,L]
+</IfModule>
+<IfModule mod_headers.c>
+    <FilesMatch "\.(html|php)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires 0
+    </FilesMatch>
+    <FilesMatch "\.(js|css)$">
+        Header set Cache-Control "max-age=3600, public, must-revalidate"
+    </FilesMatch>	
+    <FilesMatch "\.(ico|pdf|jpg|png|gif)$">
+        Header set Cache-Control "max-age=7200, public, must-revalidate"
+    </FilesMatch>
+</IfModule>
